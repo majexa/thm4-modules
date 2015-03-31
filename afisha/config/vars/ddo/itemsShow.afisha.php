@@ -1,7 +1,7 @@
 <?php
 
 return [
-  'siteItems' => [
-    'title' => true
-  ]
+  //'siteItems' => [
+  //  'title' => true
+  //]
 ];
