@@ -1,0 +1,23 @@
+.str_afisha .hgrp_image {
+width: 130px;
+vertical-align: top;
+}
+.str_afisha .hgrp_title {
+width: 430px;
+}
+.str_afisha .hgrp {
+display: inline-block;
+}
+.ddItems.str_afisha .f_eventDate {
+display: inline-block;
+}
+.ddItems.str_afisha .f_eventTime {
+display: inline-block;
+}
+.ddItems.str_afisha .f_price {
+display: inline-block;
+margin-left: 20px;
+}
+.ddItems.str_afisha .f_text {
+margin-bottom: 0;
+}

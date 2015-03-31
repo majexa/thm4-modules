@@ -1,0 +1,16 @@
+.ddItems.str_items {
+width: 620px;
+}
+.ddItems.str_items .item {
+height: 125px;
+width: 130px;
+margin-right: 12px;
+display: inline-block;
+}
+.ddItems.str_items .f_dateCreate {
+font-size: 9px;
+margin-top: 7px;
+}
+.ddItems.str_items .thumbCont img {
+width: 120px;
+}

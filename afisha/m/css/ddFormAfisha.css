@@ -1,0 +1,7 @@
+.apeform .name_eventDate,
+.apeform .name_eventTime,
+.apeform .name_place,
+.apeform .name_price {
+display: inline-block;
+width: 45%;
+}
