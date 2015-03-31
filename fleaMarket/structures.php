@@ -1,7 +1,7 @@
 <?php
 
 return [
-  'fleaMarket' => [
+  'fleaMarketProducts' => [
     [
       'title'    => 'Название',
       'name'     => 'title',
