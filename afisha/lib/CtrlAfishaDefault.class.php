@@ -1,22 +1,10 @@
 <?php
 
-class CtrlAfishaDefault extends CtrlThemeFour {
+class CtrlAfishaDefault extends CtrlThemeFourDefault {
   use DdCrudParamFilterCtrl;
 
   protected function themeFourModule() {
     return 'afisha';
-  }
-
-  protected function id() {
-    return $this->req->rq('id');
-  }
-
-  protected function getStrName() {
-    return 'afisha';
-  }
-
-  protected function getParamActionN() {
-    return 0;
   }
 
   protected function paramFilterN() {
@@ -25,6 +13,11 @@ class CtrlAfishaDefault extends CtrlThemeFour {
 
   protected function paramFilterDateField() {
     return 'eventDate';
+  }
+
+  protected function init() {
+    parent::init();
+    $this->d['sectionTitle'] = 'События';
   }
 
   function oProcessForm(Form $form) {
@@ -40,36 +33,30 @@ class CtrlAfishaDefault extends CtrlThemeFour {
     $this->d['calendar'] = $calendar->getMonthView($this->month ?: date('n'), $this->year ?: date('Y'));
   }
 
-  function action_edit() {
-    $this->getIm();
-  }
-
   function action_default() {
     $ddo = new DdoFour($this->getStrName(), 'siteItems');
     $ddo->disallowEmpties = ['price', 'text'];
     $ddo->groupFrom('title');
     $items = $this->items();
     $items->n = 100;
-
-
-    $todayFilter = $this->setFilterDate(date('j;n;Y'), 'eventDate', true);
+    $this->setFilterDate(date('j;n;Y'), 'eventDate', true);
     $items->cond->setOrder('eventDate DESC, eventTime');
     $_items = $items->getItems();
-
     $this->d['html'] = $ddo->setItems($_items)->els();
     $this->d['tpl'] = 'afisha/list';
     $this->d['blocksTpl'] = 'afisha/blocks';
     $this->d['layout'] = 'cols2';
     $this->initCalendar();
-
     if ($this->day) {
       $cnt = ' ('.count($_items).' шт.)';
-      if ($todayFilter) {
+      if (in_array('dateCreate', $this->items->cond->filterKeys) and $this->day == date('j') and $this->month == date('n') and $this->year == date('Y')) {
         $this->setPageTitle('Добавлено сегодня'.$cnt);
-      } else {
+      }
+      else {
         $this->setPageTitle($this->day.' '.Config::getVar('ruMonths2')[$this->month].' '.$this->year.$cnt);
       }
-    } elseif ($this->month) {
+    }
+    elseif ($this->month) {
       $this->setPageTitle(Config::getVar('ruMonths')[$this->month].' '.$this->year);
     }
   }

@@ -5,13 +5,25 @@ return [
     [
       'title'    => 'Заголовок',
       'name'     => 'title',
-      'type'     => 'typoText',
-      'required' => true
+      'type'     => 'typoText'
     ],
     [
       'title' => 'Текст',
       'name'  => 'text',
       'type'  => 'wisiwigSimple'
+    ],
+  ],
+  'profile' => [
+    [
+      'title'    => 'Имя',
+      'name'     => 'name',
+      'type'     => 'typoText',
+      'required' => true
+    ],
+    [
+      'title'    => 'Аватар',
+      'name'     => 'image',
+      'type'     => 'imagePreview',
     ],
   ]
 ];

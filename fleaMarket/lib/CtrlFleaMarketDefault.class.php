@@ -12,7 +12,7 @@ class CtrlFleaMarketDefault extends CtrlThemeFour {
   }
 
   protected function getStrName() {
-    return 'items';
+    return 'fleaMarketProducts';
   }
 
   protected function _getIm() {
@@ -26,15 +26,16 @@ class CtrlFleaMarketDefault extends CtrlThemeFour {
 
   protected function init() {
     parent::init();
+    $this->d['sectionTitle'] = 'Барахолка';
     Sflm::frontend('js')->addClass('Ngn.Dialog.RequestForm');
     $this->d['layout'] = 'cols2';
     $this->d['menu'][] = [
       'title' => 'Вещи',
-      'link'  => '/list'
+      'link'  => $this->d['basePath'].'/list'
     ];
     $this->d['menu'][] = [
       'title' => 'О сервисе',
-      'link'  => '/about',
+      'link'  => $this->d['basePath'].'/about',
     ];
   }
 
