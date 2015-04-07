@@ -3,7 +3,7 @@
 class CtrlCommunityBlogProfile extends CtrlCommon {
   use DdCrudParamFilterCtrl;
 
-  protected function getStrName() {
+  function getStrName() {
     return 'profile';
   }
 

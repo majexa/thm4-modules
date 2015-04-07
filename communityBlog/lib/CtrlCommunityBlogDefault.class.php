@@ -9,7 +9,7 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
 
   protected function init() {
     parent::init();
-    $this->d['sectionTitle'] = 'Ежедневное';
+    $this->d['sectionTitle'] = 'Блог';
   }
 
   function action_default() {
