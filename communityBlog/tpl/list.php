@@ -17,8 +17,5 @@ max-width: 150px;
 <?= $d['html'] ?>
 
 <script>
-    new Ngn.Dialog.RequestForm({
-        url: '/blog?a=json_edit&id=43'
-    });
 Ngn.Btn.AddAuthorized(document.getElement('.bookmarks'));
 </script>
