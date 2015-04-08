@@ -1,6 +1,7 @@
 <?php
 
 return [
-  'title' => '`<img class="avatar" src="`.O::get(`DdItems`, `profile`)->getItem($authorId)[`sm_image`].`">`.DbModelCore::get(`users`, $authorId)[`login`].($v ? `<h2>`.$v.`</h2>` : ``)',
-  'images' => 'St::enum($v, ``, `"<img src=".UPLOAD_DIR."/".$v.">"`)'
+  'title' => '($v ? `<h2>`.$v.`</h2>` : ``)',
+  'images' => 'St::enum($v, ``, `"<a href=/".UPLOAD_DIR.\\`/\\`.$v." class=\\`thumb lightbox\\`><img src=/".UPLOAD_DIR."/".Misc::getFilePrefexedPath($v, \\"sm_\\")."></a>"`)',
+  'text' => '$v',
 ];

@@ -24,12 +24,12 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
   }
 
   function lst() {
-    $this->d['contentTpl'] = 'list';
+    $this->d['contentTpl'] = 'communityBlog/homeList';
     //$this->d['tpl'] = 'list';
     $this->d['bookmarks'] = [[
       'title' => 'Последние посты',
     ]];
-    $ddo = new DdoFour($this->getStrName(), 'siteItems');
+    $ddo = new DdoFour($this->getStrName(), 'siteItemsHome');
     //$ddo->gridMode = 'tile';
     $this->d['html'] = $ddo->setItems($this->items()->getItems())->els();
   }
