@@ -1,3 +1,16 @@
 .ddItems.str_communityBlog .f_images .thumb {
 margin: 0 10px 10px 0;
 }
+.ddItems.str_communityBlog .f_title .name {
+margin-top: 15px;
+}
+.ddItems.str_communityBlog .t_datetime {
+position: absolute;
+top: 0;
+left: -170px;
+font-style: italic;
+width: 200px;
+font-size: 10px;
+color: #555;
+}
+
