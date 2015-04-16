@@ -1,6 +1,6 @@
 <?php
 
-class WebStudiosRouter extends DefaultRouter {
+class WebStudiosRouter extends ThmFourRouter {
 
   function _getController() {
     if (isset($this->req->params[0])) {

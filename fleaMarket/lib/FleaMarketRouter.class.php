@@ -1,6 +1,6 @@
 <?php
 
-class FleaMarketRouter extends DefaultRouter {
+class FleaMarketRouter extends ThmFourRouter {
   function _getController() {
     return new CtrlFleaMarketDefault($this);
   }

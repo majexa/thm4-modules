@@ -1,6 +1,6 @@
 <?php
 
-class AfishaRouter extends DefaultRouter {
+class AfishaRouter extends ThmFourRouter {
 
   function _getController() {
     return new CtrlAfishaDefault($this);

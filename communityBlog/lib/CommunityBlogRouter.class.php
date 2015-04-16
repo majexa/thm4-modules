@@ -1,6 +1,6 @@
 <?php
 
-class CommunityBlogRouter extends DefaultRouter {
+class CommunityBlogRouter extends ThmFourRouter {
 
   function _getController() {
     if (isset($this->req->params[0])) {
