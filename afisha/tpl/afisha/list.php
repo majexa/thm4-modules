@@ -5,7 +5,6 @@
   <?= $d['html'] ?>
 </div>
 
-
 <script>
   Ngn.FramesSlider.MapContents = new Class({
     Extends: Ngn.FramesSlider,
