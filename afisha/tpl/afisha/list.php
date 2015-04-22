@@ -6,7 +6,6 @@
 </div>
 
 <script>
-
   <? if ($d['mobile']) { ?>
   new Element('div', {'class': 'title'}).inject(document.getElement('.header .container'));
   new Ngn.DdoTitleSlider(
@@ -15,7 +14,9 @@
       map: {
         '.bookmarks': '.header .container .title'
       }
-    })
+    }), {
+      subscriptFields: [<? if (!$d['today']) { ?>'eventDate', <? } ?>'eventTime', 'eventPrice', 'eventPlace']
+    }
   );
   <? } else { ?>
   new Ngn.DdoItemsEdit();

@@ -39,7 +39,7 @@ class CtrlAfishaDefault extends CtrlThemeFourDefault {
     $ddo->groupFrom('title');
     $items = $this->items();
     $items->n = 100;
-    $this->setFilterDate(date('j;n;Y'), 'eventDate', true);
+    $this->d['today'] = $this->setFilterDate(date('j;n;Y'), 'eventDate', true);
     $items->cond->setOrder('eventDate DESC, eventTime');
     $_items = $items->getItems();
     $this->d['html'] = $ddo->setItems($_items)->els();
@@ -53,7 +53,11 @@ class CtrlAfishaDefault extends CtrlThemeFourDefault {
         $this->setPageTitle('Добавлено сегодня'.$cnt);
       }
       else {
-        $this->setPageTitle($this->day.' '.Config::getVar('ruMonths2')[$this->month].' '.$this->year.$cnt);
+          if ($this->d['today']) {
+              $this->setPageTitle('Сегодня '.$cnt);
+          } else {
+              $this->setPageTitle($this->day.' '.Config::getVar('ruMonths2')[$this->month].' '.$this->year.$cnt);
+          }
       }
     }
     elseif ($this->month) {
