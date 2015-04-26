@@ -26,9 +26,10 @@ class CtrlFleaMarketDefault extends CtrlThemeFour {
 
   protected function init() {
     parent::init();
-    $this->d['sectionTitle'] = 'Барахолка';
+    $this->d['sectionTitle'] = 'Фри-маркет';
     Sflm::frontend('js')->addClass('Ngn.Dialog.RequestForm');
     $this->d['layout'] = 'cols2';
+/*
     $this->d['menu'][] = [
       'title' => 'Вещи',
       'link'  => $this->d['basePath'].'/list'
@@ -37,6 +38,7 @@ class CtrlFleaMarketDefault extends CtrlThemeFour {
       'title' => 'О сервисе',
       'link'  => $this->d['basePath'].'/about',
     ];
+*/
   }
 
   protected function getParamActionN() {
@@ -48,6 +50,7 @@ class CtrlFleaMarketDefault extends CtrlThemeFour {
     $this->d['tpl'] = 'default';
     Sflm::frontend('js')->addPath('i/js/ngn/form/domreadyInit.js');
     $form = new MultiImageUploadForm;
+    //$form->action = $this->req->getPath();
     if ($form->isSubmittedAndValid()) throw new Exception('non-ajax form request is not allowed');
     $this->d['uploadForm'] = $form->html();
     if (($loadedImages = UserUploadTemp::get())) {
