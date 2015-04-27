@@ -1,16 +1,16 @@
-.ddItems.str_items {
+.ddItems.str_fleaMarketProducts {
 width: 620px;
 }
-.ddItems.str_items .item {
+.ddItems.str_fleaMarketProducts .item {
 height: 125px;
 width: 130px;
 margin-right: 12px;
 display: inline-block;
 }
-.ddItems.str_items .f_dateCreate {
+.ddItems.str_fleaMarketProducts .f_dateCreate {
 font-size: 9px;
 margin-top: 7px;
 }
-.ddItems.str_items .thumbCont img {
+.ddItems.str_fleaMarketProducts .thumbCont img {
 width: 120px;
 }
