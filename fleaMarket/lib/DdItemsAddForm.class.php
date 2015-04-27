@@ -48,12 +48,11 @@ class DdItemsAddForm extends DdForm {
         'text' => 'Вы добавляете это сообщения как '.Auth::get('login')
       ];
     }
-    parent::__construct($fields, 'items', [
+    parent::__construct($fields, 'fleaMarketProducts', [
       'submitTitle' => 'Добавить',
       'idByClass' => true,
       'jsClassById' => true
     ]);
-    $this->action = '/json_create';
   }
 
 }

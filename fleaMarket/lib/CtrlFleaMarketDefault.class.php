@@ -26,19 +26,17 @@ class CtrlFleaMarketDefault extends CtrlThemeFour {
 
   protected function init() {
     parent::init();
-    $this->d['sectionTitle'] = 'Фри-маркет';
+    $this->d['sectionTitle'] = 'Барахолка';
     Sflm::frontend('js')->addClass('Ngn.Dialog.RequestForm');
     $this->d['layout'] = 'cols2';
-/*
-    $this->d['menu'][] = [
-      'title' => 'Вещи',
-      'link'  => $this->d['basePath'].'/list'
-    ];
-    $this->d['menu'][] = [
-      'title' => 'О сервисе',
-      'link'  => $this->d['basePath'].'/about',
-    ];
-*/
+//    $this->d['menu'][] = [
+//      'title' => 'Вещи',
+//      'link'  => $this->d['basePath'].'/list'
+//    ];
+//    $this->d['menu'][] = [
+//      'title' => 'О сервисе',
+//      'link'  => $this->d['basePath'].'/about',
+//    ];
   }
 
   protected function getParamActionN() {
@@ -49,14 +47,16 @@ class CtrlFleaMarketDefault extends CtrlThemeFour {
     $this->d['blocksTpl'] = 'upload';
     $this->d['tpl'] = 'default';
     Sflm::frontend('js')->addPath('i/js/ngn/form/domreadyInit.js');
-    $form = new MultiImageUploadForm;
-    //$form->action = $this->req->getPath();
+    $form = new MultiImageUploadForm([
+      'baseUrl' => $this->d['basePath']
+    ]);
+    //$form->action = ;
     if ($form->isSubmittedAndValid()) throw new Exception('non-ajax form request is not allowed');
     $this->d['uploadForm'] = $form->html();
     if (($loadedImages = UserUploadTemp::get())) {
-      $this->d['itemsAddForm'] = (new DdItemsAddForm($loadedImages))->html();
+      $this->d['itemsAddForm'] = $this->addForm($loadedImages)->html();
     }
-    $ddo = (new Ddo('items', 'siteItems'));
+    $ddo = (new Ddo('fleaMarketProducts', 'siteItems'));
     $ddo->gridMode = 'tile';
     $this->d['lastItems'] = $ddo->setItems($this->items()->getItems())->els();
   }
@@ -65,8 +65,14 @@ class CtrlFleaMarketDefault extends CtrlThemeFour {
     $this->imageLoadedAction(array_merge(UserUploadTemp::get(), UserUploadTemp::moveFromRequest($this->req)));
   }
 
+  protected function addForm($imageUrls) {
+    $form = new DdItemsAddForm($imageUrls);
+    $form->action = $this->d['basePath'].'/json_create';
+    return $form;
+  }
+
   protected function imageLoadedAction(array $imageUrls) {
-    $this->json['itemsAddForm'] = '<div class="apeform">'.(new DdItemsAddForm($imageUrls))->html().'</div>';
+    $this->json['itemsAddForm'] = '<div class="apeform">'.$this->addForm($imageUrls)->html().'</div>';
   }
 
   function action_json_create() {
@@ -112,12 +118,12 @@ class CtrlFleaMarketDefault extends CtrlThemeFour {
     $this->d['blocksTpl'] = 'cat';
     $this->d['tpl'] = 'itemsList';
     $base = $mine ? '/list/mine' : '/list';
-    $tags = DdTags::get('items', 'cat');
+    $tags = DdTags::get('fleaMarketProducts', 'cat');
     $this->d['catTree'] = DdTagsHtml::treeUl( //
       $tags->getData(),
       '`<a href="'.$base.'/t2.`.$groupName.`.`.$id.`"><i></i><span><span class="tit">`.$title.`</span><span class="cnt">`.$cnt.`</span></a>`' //
     );
-    $ddo  =new Ddo('items', 'siteItems');
+    $ddo = new Ddo('fleaMarketProducts', 'siteItems');
     $ddo->gridMode = 'tile';
     $this->d['html'] = $ddo->setItems($items->getItems())->els();
   }

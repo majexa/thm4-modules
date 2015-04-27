@@ -23,7 +23,7 @@ return [
       'title'    => 'Категория',
       'name'     => 'cat',
       'type'     => 'ddTagsTreeMultiselect',
-      'required' => true,
+      //'required' => true,
     ]
   ]
 ];
