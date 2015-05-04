@@ -30,6 +30,7 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
       'title' => 'Последние посты',
     ]];
     $ddo = new DdoFour($this->getStrName(), 'siteItemsHome');
+    $ddo->setPagePath($this->d['basePath']);
     //$ddo->gridMode = 'tile';
     $this->d['html'] = $ddo->setItems($this->items()->getItems())->els();
     $this->d['pNums'] = $this->items()->pNums;
