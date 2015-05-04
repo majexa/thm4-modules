@@ -42,6 +42,7 @@ class CtrlAfishaDefault extends CtrlThemeFourDefault {
     $this->d['today'] = $this->setFilterDate(date('j;n;Y'), 'eventDate', true);
     $items->cond->setOrder('eventDate DESC, eventTime');
     $_items = $items->getItems();
+    $this->d['pNums'] = $items->pNums;
     $this->d['html'] = $ddo->setItems($_items)->els();
     $this->d['tpl'] = 'afisha/list';
     $this->d['blocksTpl'] = 'afisha/blocks';

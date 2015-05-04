@@ -1,3 +1,4 @@
+<div class="pNums"><?= $d['pNums'] ?></div>
 <div class="bookmarks">
   <?= $d['pageTitle'] ?>
 </div>

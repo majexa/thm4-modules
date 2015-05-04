@@ -32,6 +32,7 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
     $ddo = new DdoFour($this->getStrName(), 'siteItemsHome');
     //$ddo->gridMode = 'tile';
     $this->d['html'] = $ddo->setItems($this->items()->getItems())->els();
+    $this->d['pNums'] = $this->items()->pNums;
   }
 
   function item($id) {
