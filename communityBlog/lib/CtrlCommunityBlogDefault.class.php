@@ -54,4 +54,24 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
     $this->d['html'] = $item['text'];
   }
 
+  function action_authors() {
+    $this->d['bookmarks'] = [[
+      'title' => 'Авторы',
+    ]];
+    $this->d['layout'] = 'cols2';
+    $this->d['blocksTpl'] = 'empty';
+    $this->d['tpl'] = 'bookmarkContent';
+    $this->d['contentTpl'] = 'communityBlog/authors';
+    $pagination = new Pagination(['n' => 100]);
+    list($this->d['pNums'], $offset) = $pagination->get('dd_i_profile');
+    $this->d['items'] = db()->query(<<<SQL
+SELECT dd_i_profile.* FROM
+  dd_i_communityBlog
+LEFT JOIN dd_i_profile ON dd_i_profile.userId=dd_i_communityBlog.userId
+GROUP BY userId
+LIMIT $offset
+SQL
+);
+  }
+
 }
