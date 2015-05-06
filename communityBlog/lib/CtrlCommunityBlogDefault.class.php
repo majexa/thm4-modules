@@ -16,14 +16,6 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
     $this->d['layout'] = 'cols2';
     $this->d['blocksTpl'] = 'empty';
     $this->d['tpl'] = 'bookmarkContent';
-    if (!empty($this->req->params[0])) {
-       $this->item($this->req->params[0]);
-    } else {
-       $this->lst();
-    }
-  }
-
-  function lst() {
     $this->d['contentTpl'] = 'communityBlog/homeList';
     //$this->d['tpl'] = 'list';
     $this->d['bookmarks'] = [[
@@ -36,8 +28,11 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
     $this->d['pNums'] = $this->items()->pNums;
   }
 
-  function item($id) {
-    $item = $this->items()->getItem($id);
+  function action_item() {
+    $this->d['layout'] = 'cols2';
+    $this->d['blocksTpl'] = 'empty';
+    $this->d['tpl'] = 'bookmarkContent';
+    $item = $this->items()->getItem($this->req->param(1));
     $this->d['bookmarks'] = [
       [
         'title' => 'Назад',
