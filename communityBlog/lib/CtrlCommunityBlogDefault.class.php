@@ -12,6 +12,14 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
     $this->d['sectionTitle'] = 'Блоги';
   }
 
+  protected function _items() {
+    return new DdItems($this->getStrName(), [
+      'paginationOptions' => [
+        'maxPages' => 5
+      ]
+    ]);
+  }
+
   function action_default() {
     $this->d['layout'] = 'cols2';
     $this->d['blocksTpl'] = 'empty';
