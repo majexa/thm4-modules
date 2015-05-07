@@ -10,7 +10,7 @@ width: 100px;
 <? foreach ($d['items'] as $v) { ?>
   <div class="item">
     <a href="/blog/user/<?= $v['id'] ?>">
-      <img src="/<?= $v['image'] ?>">
+      <img src="/u/<?= $v['image'] ?>">
       <div><?= $v['name'] ?></div>
     </a>
   </div>
