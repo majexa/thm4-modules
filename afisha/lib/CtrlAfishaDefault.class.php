@@ -68,10 +68,12 @@ class CtrlAfishaDefault extends CtrlThemeFourDefault {
 
   function action_item() {
     $this->d['layout'] = 'cols2';
-    $this->d['tpl'] = 'htmlContent';
+    $this->d['tpl'] = 'bookmarkContent';
     $this->d['blocksTpl'] = 'empty';
     $ddo = new DdoFour($this->getStrName(), 'siteItem');
-    $ddo->setItem(Misc::checkEmpty($this->items()->getItem($this->req->param(1))));
+    $item = Misc::checkEmpty($this->items()->getItem($this->req->param(1)));
+    $this->d['title'] = $item['title'];
+    $ddo->setItem($item);
     $this->d['html'] = $ddo->els();
   }
 

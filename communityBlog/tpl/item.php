@@ -1,3 +1,3 @@
-<div style="padding:20px;">
+<div class="colBodyContent">
   <?= $d['html'] ?>
 </div>

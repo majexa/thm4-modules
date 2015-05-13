@@ -1,17 +1,24 @@
-.str_afisha .hgrp_image {
+.ddItems.str_afisha .hgrp_image {
 width: 130px;
 vertical-align: top;
 }
 .str_afisha .hgrp_title {
 width: 430px;
 }
+.ddItem.str_afisha .f_text {
+font-size: 16px;
+margin-bottom: 15px;
+}
+.ddItem.str_afisha .f_price {
+margin-top: 5px;
+}
 .str_afisha .hgrp {
 display: inline-block;
 }
-.ddItems.str_afisha .f_eventDate {
+.str_afisha .f_eventDate {
 display: inline-block;
 }
-.ddItems.str_afisha .f_eventTime {
+.str_afisha .f_eventTime {
 display: inline-block;
 }
 .ddItems.str_afisha .f_price {

@@ -1,7 +1,11 @@
 <?php
 
 return [
-  //'siteItems' => [
-  //  'title' => true
-  //]
+  'siteItem' => [
+    'text' => true,
+    'image' => true,
+    'eventDate' => true,
+    'eventTime' => true,
+    'price' => true,
+  ]
 ];
