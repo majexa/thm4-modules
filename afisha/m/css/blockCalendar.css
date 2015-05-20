@@ -16,15 +16,15 @@ width: 14.4%;
 .blockCalendar table span,
 .blockCalendar table a {
 padding: 4px 5px;
+display: inline-block;
+width: 11px;
+height: 13px;
 }
 .blockCalendar table a {
 background: #0078AB;
 border-radius: 10px;
 color: #fff;
 text-align: center;
-display: inline-block;
-width: 11px;
-height: 13px;
 }
 .blockCalendar table a:hover {
 background: #ED0461;

@@ -43,7 +43,7 @@ class CtrlAfishaDefault extends CtrlThemeFourDefault {
     $items->cond->setOrder('eventDate DESC, eventTime');
     $_items = $items->getItems();
     $this->d['pNums'] = $items->pNums;
-    $this->d['html'] = $ddo->setItems($_items)->els();
+    $this->d['html'] = count($_items) ? $ddo->setItems($_items)->els() : '<div class="noItems">событий нет</div>';
     $this->d['tpl'] = 'afisha/list';
     $this->d['blocksTpl'] = 'afisha/blocks';
     $this->d['layout'] = 'cols2';
