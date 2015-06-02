@@ -58,7 +58,7 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
     $this->d['bookmarks'] = [[
       'title' => 'Авторы',
     ]];
-    $this->d['layout'] = 'cols2';
+    $this->d['layout'] = 'cols1';
     $this->d['blocksTpl'] = 'empty';
     $this->d['tpl'] = 'bookmarkContent';
     $this->d['contentTpl'] = 'communityBlog/authors';
