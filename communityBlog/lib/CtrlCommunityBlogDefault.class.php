@@ -26,9 +26,7 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
     $this->d['tpl'] = 'bookmarkContent';
     $this->d['contentTpl'] = 'communityBlog/homeList';
     //$this->d['tpl'] = 'list';
-    $this->d['bookmarks'] = [[
-      'title' => 'Последние посты',
-    ]];
+    $this->d['title'] = 'Последние посты';
     $ddo = new DdoFour($this->getStrName(), 'siteItemsHome');
     $ddo->setPagePath($this->d['basePath']);
     //$ddo->gridMode = 'tile';
