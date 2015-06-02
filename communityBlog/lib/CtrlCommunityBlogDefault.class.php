@@ -58,7 +58,7 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
     $this->d['bookmarks'] = [[
       'title' => 'Авторы',
     ]];
-    $this->d['layout'] = 'cols1';
+    $this->d['layout'] = 'cols2';
     $this->d['blocksTpl'] = 'empty';
     $this->d['tpl'] = 'bookmarkContent';
     $this->d['contentTpl'] = 'communityBlog/authors';
@@ -68,6 +68,7 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
 SELECT dd_i_profile.* FROM
   dd_i_communityBlog
 LEFT JOIN dd_i_profile ON dd_i_profile.userId=dd_i_communityBlog.userId
+WHERE dd_i_profile.userId IS NOT NULL
 GROUP BY userId
 LIMIT $offset
 SQL

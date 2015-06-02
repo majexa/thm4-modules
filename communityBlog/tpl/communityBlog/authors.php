@@ -1,8 +1,26 @@
 <style>
+    .authors {
+        padding: 15px 0 0 30px;
+    }
 .authors .item {
-display: inline-block;
+float: left;
 margin: 0 10px 10px 0;
-width: 100px;
+    width: 100px;
+    height: 150px;
+
+    text-align: center;
+    font-size: 10px;
+}
+.authors .item .tit {
+    margin-top: 5px;
+}
+.authors .item a {
+    color: #000;
+    text-decoration: none;
+
+}
+.authors .item a:hover {
+    text-decoration: underline;
 }
 </style>
 
@@ -11,7 +29,7 @@ width: 100px;
   <div class="item">
     <a href="/blog/user/<?= $v['id'] ?>">
       <img src="/u/<?= $v['image'] ?>">
-      <div><?= $v['name'] ?></div>
+      <div class="tit"><?= $v['name'] ?></div>
     </a>
   </div>
 <? } ?>
