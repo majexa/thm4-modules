@@ -9,6 +9,12 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
 
   protected function init() {
     parent::init();
+    $this->d['submenu'] = $this->extendByBasePath([
+      [
+        'title' => 'Авторы',
+        'link' => 'authors'
+      ]
+    ]);
     $this->d['sectionTitle'] = 'Блоги';
   }
 
@@ -25,11 +31,9 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
     $this->d['blocksTpl'] = 'empty';
     $this->d['tpl'] = 'bookmarkContent';
     $this->d['contentTpl'] = 'communityBlog/homeList';
-    //$this->d['tpl'] = 'list';
     $this->d['title'] = 'Последние посты';
     $ddo = new DdoFour($this->getStrName(), 'siteItemsHome');
     $ddo->setPagePath($this->d['basePath']);
-    //$ddo->gridMode = 'tile';
     $this->d['html'] = $ddo->setItems($this->items()->getItems())->els();
     $this->d['pNums'] = $this->items()->pNums;
   }
@@ -53,9 +57,7 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
   }
 
   function action_authors() {
-    $this->d['bookmarks'] = [[
-      'title' => 'Авторы',
-    ]];
+    $this->d['title'] = 'Авторы';
     $this->d['layout'] = 'cols2';
     $this->d['blocksTpl'] = 'empty';
     $this->d['tpl'] = 'bookmarkContent';
@@ -71,6 +73,10 @@ GROUP BY userId
 LIMIT $offset
 SQL
 );
+    $this->d['postCounts'] = [];
+    $this->d['postCounts']['week'] = db()->selectCol("SELECT userId AS ARRAY_KEY, COUNT(*) AS cnt FROM dd_i_communityBlog WHERE dateCreate>? GROUP BY userId", Date::db(strtotime('-1 week')));
+    $this->d['postCounts']['day'] = db()->selectCol("SELECT userId AS ARRAY_KEY, COUNT(*) AS cnt FROM dd_i_communityBlog WHERE dateCreate>? GROUP BY userId", Date::db(strtotime('-1 day')));
+    $this->d['postCounts']['hour'] = db()->selectCol("SELECT userId AS ARRAY_KEY, COUNT(*) AS cnt FROM dd_i_communityBlog WHERE dateCreate>? GROUP BY userId", Date::db(strtotime('-1 hour')));;
   }
 
 }
