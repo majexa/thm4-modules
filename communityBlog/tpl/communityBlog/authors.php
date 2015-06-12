@@ -63,7 +63,7 @@ $countTitles = [
           <? } ?>
         <? } ?>
       </div>
-      <a href="/blog/user/<?= $v['id'] ?>">
+      <a href="/blog/user/<?= $v['userId'] ?>">
         <img src="<?= $v['image'] ? '/u/'.$v['image'] : '/i/img/empty.png' ?>">
         <div class="tit"><?= $v['name'] ?></div>
       </a>
