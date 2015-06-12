@@ -1,6 +1,6 @@
 <?php
 
-class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
+class CtrlCommunityBlogDefault extends CtrlCommunityBlog {
   use DdCrudParamFilterCtrl;
 
   protected function themeFourModule() {
@@ -13,7 +13,7 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
       [
         'title' => 'Авторы',
         'link' => 'authors'
-      ]
+      ],
     ]);
     $this->d['sectionTitle'] = 'Блоги';
   }

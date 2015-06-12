@@ -3,10 +3,6 @@
 class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
   use DdCrudParamFilterCtrl;
 
-  protected function themeFourModule() {
-    return 'communityBlog';
-  }
-
   protected function init() {
     parent::init();
     $this->d['sectionTitle'] = 'Блоги';
