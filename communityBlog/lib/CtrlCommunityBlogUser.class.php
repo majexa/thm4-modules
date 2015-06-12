@@ -7,7 +7,7 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
     parent::init();
     $this->d['sectionTitle'] = 'Блоги';
   }
-  
+
   protected function themeFourModule() {
     return 'communityBlog';
   }
