@@ -7,6 +7,10 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
     parent::init();
     $this->d['sectionTitle'] = 'Блоги';
   }
+  
+  protected function themeFourModule() {
+    return 'communityBlog';
+  }
 
   function action_default() {
     $this->curUser = DbModelCore::get('users', $this->req->param(1));
