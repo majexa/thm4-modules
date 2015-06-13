@@ -70,9 +70,11 @@ LIMIT $offset
 SQL
 );
     $this->d['postCounts'] = [];
-    $this->d['postCounts']['week'] = db()->selectCol("SELECT userId AS ARRAY_KEY, COUNT(*) AS cnt FROM dd_i_communityBlog WHERE dateCreate>? GROUP BY userId", Date::db(strtotime('-1 week')));
-    $this->d['postCounts']['day'] = db()->selectCol("SELECT userId AS ARRAY_KEY, COUNT(*) AS cnt FROM dd_i_communityBlog WHERE dateCreate>? GROUP BY userId", Date::db(strtotime('-1 day')));
-    $this->d['postCounts']['hour'] = db()->selectCol("SELECT userId AS ARRAY_KEY, COUNT(*) AS cnt FROM dd_i_communityBlog WHERE dateCreate>? GROUP BY userId", Date::db(strtotime('-1 hour')));;
+    $this->d['postCounts']['week'] = DdUseful::userRecordCounts('communityBlog', strtotime('-1 week'));
+    $this->d['postCounts']['day'] = DdUseful::userRecordCounts('communityBlog', strtotime('-1 day'));
+    $this->d['postCounts']['hour'] = DdUseful::userRecordCounts('communityBlog', strtotime('-1 hour'));
+    $this->d['items'] = DdUseful::sortItemsByUserRecordCounts($this->d['items'], $this->d['postCounts']['week']);
+    $this->d['items'] = DdUseful::sortItemsByUserRecordCounts($this->d['items'], $this->d['postCounts']['day']);
   }
 
 }
