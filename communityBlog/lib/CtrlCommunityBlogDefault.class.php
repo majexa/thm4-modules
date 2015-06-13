@@ -11,6 +11,10 @@ class CtrlCommunityBlogDefault extends CtrlCommunityBlog {
     parent::init();
     $this->d['submenu'] = $this->extendByBasePath([
       [
+        'title' => 'Блоги',
+        'link' => ''
+      ],
+      [
         'title' => 'Авторы',
         'link' => 'authors'
       ],
@@ -43,15 +47,7 @@ class CtrlCommunityBlogDefault extends CtrlCommunityBlog {
     $this->d['blocksTpl'] = 'empty';
     $this->d['tpl'] = 'bookmarkContent';
     $item = $this->items()->getItem($this->req->param(1));
-    $this->d['bookmarks'] = [
-      [
-        'title' => 'Назад',
-        'link' => $this->d['basePath']
-      ],
-      [
-        'title' => $item['title'],
-      ]
-    ];
+    if ($item['title']) $this->setPageTitle($item['title']);
     $this->d['contentTpl'] = 'item';
     $this->d['html'] = $item['text'];
   }
