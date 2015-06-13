@@ -45,7 +45,7 @@ class CtrlAfishaDefault extends CtrlThemeFourDefault {
     $ddo->disallowEmpties = ['price', 'text'];
     $ddo->groupFrom('title');
     $items = $this->items();
-    $items->n = 100;
+    $items->setN(100);
     $this->d['today'] = $this->setFilterDate(date('j;n;Y'), 'eventDate', true);
     $items->cond->setOrder('eventDate DESC, eventTime');
     $_items = $items->getItems();
