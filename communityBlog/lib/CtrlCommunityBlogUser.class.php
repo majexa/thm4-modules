@@ -35,6 +35,7 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
     */
     $ddo = new DdoFour('communityBlog', 'siteItems');
     $this->items()->addF('userId', $this->curUser['id']);
+    //$this->items()->setPagination(true);
     $this->d['html'] = $ddo->setItems($this->items()->getItems())->els();
   }
 
