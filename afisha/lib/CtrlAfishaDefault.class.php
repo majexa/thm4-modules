@@ -17,6 +17,13 @@ class CtrlAfishaDefault extends CtrlThemeFourDefault {
 
   protected function init() {
     parent::init();
+    $this->d['submenu'] = $this->extendByBasePath([
+      [
+        'title' => 'Добавлено сегодня',
+        'link' => 'd.'.date('j').';'.date('n').';'.date('Y').'.dateCreate'
+      ]
+    ]);
+
     $this->d['sectionTitle'] = 'События';
   }
 
