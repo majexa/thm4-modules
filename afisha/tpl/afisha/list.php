@@ -1,10 +1,4 @@
-<div class="pNums"><?= $d['pNums'] ?></div>
-<div class="bookmarks">
-  <?= $d['pageTitle'] ?>
-</div>
-<div class="colBody">
-  <?= $d['html'] ?>
-</div>
+<?= $d['html'] ?>
 
 <script>
   <? if ($d['mobile']) { ?>

@@ -31,7 +31,7 @@ class CtrlCommunityBlogDefault extends CtrlCommunityBlog {
     $this->d['blocksTpl'] = 'empty';
     $this->d['tpl'] = 'bookmarkContent';
     $this->d['contentTpl'] = 'communityBlog/homeList';
-    $this->d['title'] = 'Последние посты';
+    $this->setPageTitle('Последние посты');
     $ddo = new DdoFour($this->getStrName(), 'siteItemsHome');
     $ddo->setPagePath($this->d['basePath']);
     $this->d['html'] = $ddo->setItems($this->items()->getItems())->els();
@@ -57,7 +57,7 @@ class CtrlCommunityBlogDefault extends CtrlCommunityBlog {
   }
 
   function action_authors() {
-    $this->d['title'] = 'Авторы';
+    $this->setPageTitle('Авторы');
     $this->d['layout'] = 'cols2';
     $this->d['blocksTpl'] = 'empty';
     $this->d['tpl'] = 'bookmarkContent';

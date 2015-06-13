@@ -51,7 +51,8 @@ class CtrlAfishaDefault extends CtrlThemeFourDefault {
     $_items = $items->getItems();
     $this->d['pNums'] = $items->pNums;
     $this->d['html'] = count($_items) ? $ddo->setItems($_items)->els() : '<div class="noItems">событий нет</div>';
-    $this->d['tpl'] = 'afisha/list';
+    $this->d['tpl'] = 'bookmarkContent';
+    $this->d['contentTpl'] = 'afisha/list';
     $this->d['blocksTpl'] = 'afisha/blocks';
     $this->d['layout'] = 'cols2';
     $this->initCalendar();
