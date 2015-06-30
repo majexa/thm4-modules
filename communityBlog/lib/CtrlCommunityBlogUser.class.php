@@ -19,24 +19,12 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDefault {
     $this->d['profile'] = Arr::first((new DdItems('profile'))->addF('userId', $this->curUser['id'])->getItems_nocache());
     $this->d['tpl'] = 'bookmarkContent';
     $this->d['contentTpl'] = 'communityBlog/list';
-    $this->d['bookmarks'][] = [
-      'title' => 'Блог',
-    ];
-
-    /*
-        $this->d['bookmarks'][] = [
-          'title' => 'Инфо',
-          'link'  => '/user/'.$this->curUser['id']
-        ];
-        $this->d['bookmarks'][] = [
-          'title' => 'Портфолио',
-          'link'  => '/user/'.$this->curUser['id'].'/portfolio'
-        ];
-    */
+    $this->setPageTitle('Блог');
     $ddo = new DdoFour('communityBlog', 'siteItems');
+    $this->items()->cond->setOrder('dateCreate DESC');
     $this->items()->addF('userId', $this->curUser['id']);
-    //$this->items()->setPagination(true);
     $this->d['html'] = $ddo->setItems($this->items()->getItems())->els();
+    $this->d['pNums'] = $this->items()->pNums;
   }
 
 }

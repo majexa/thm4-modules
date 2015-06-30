@@ -2,20 +2,15 @@
 margin: 0 10px 10px 0;
 }
 .ddItems.str_communityBlog .f_title .name {
-margin-top: 15px;
 }
 .ddItems.str_communityBlog .t_datetime {
-position: absolute;
-top: 0;
-left: -170px;
-font-style: italic;
-width: 200px;
+float: right;
+text-align: right;
 font-size: 10px;
 color: #555;
 }
-.ddItems.str_communityBlog .f_text a {
+.ddItems.str_communityBlog .f_text {
 font-size: 15px;
 font-family: Georgia;
 font-style: italic;
-text-decoration: none;
 }
