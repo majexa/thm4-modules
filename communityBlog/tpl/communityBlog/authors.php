@@ -44,7 +44,10 @@
     background: #0078AB;
     color: #fff;
   }
-
+  .authors img {
+    width: 100px;
+    height: 100px;
+  }
 </style>
 <?
 $countTitles = [
