@@ -4,10 +4,9 @@
   }
   .authors .item {
     float: left;
-    margin: 0 10px 10px 0;
+    margin: 0 30px 10px 0;
     width: 100px;
     height: 160px;
-    text-align: center;
     font-size: 10px;
     position: relative;
   }
@@ -23,18 +22,18 @@
   }
   .authors .postCnts {
     position: absolute;
-    width: 15px;
-    top: 5px;
-    right: 13px;
+    top: 0px;
+    right: 0px;
   }
   .authors .postCnt {
     background: #ccc;
-
     border-radius: 20px;
     padding: 5px;
-    width: 13px;
+    width: 18px;
+    height: 18px;
     margin-bottom: 2px;
     cursor: default;
+    text-align: center;
   }
   .authors .postCnt.hour {
     background: #ED0461;
@@ -44,9 +43,13 @@
     background: #0078AB;
     color: #fff;
   }
-  .authors img {
-    width: 100px;
-    height: 100px;
+  .authors .postCnt span {
+    display: inline-block;
+    padding-top: 2px;
+  }
+  .avatar img {
+    width: 60px;
+    height: 60px;
   }
 </style>
 <?
@@ -62,12 +65,12 @@ $countTitles = [
       <div class="postCnts">
         <? foreach ($d['postCounts'] as $k => $counts) { ?>
           <? if ($d['postCounts'][$k][$v['userId']]) { ?>
-            <div class="postCnt <?= $k ?>" title="<?= $countTitles[$k] ?>"><?= $d['postCounts'][$k][$v['userId']] ?></div>
+            <div class="postCnt <?= $k ?>" title="<?= $countTitles[$k] ?>"><span><?= $d['postCounts'][$k][$v['userId']] ?></span></div>
           <? } ?>
         <? } ?>
       </div>
-      <a href="/blog/user/<?= $v['userId'] ?>">
-        <img src="<?= $v['image'] ? '/u/'.$v['image'] : '/i/img/empty.png' ?>">
+      <a href="/blog/user/<?= $v['userId'] ?>" class="avatar">
+        <img src="<?= $v['image'] ? '/u/'.Misc::getFilePrefexedPath2($v['image'], 'sm_') : '/i/img/empty.png' ?>">
         <div class="tit"><?= $v['name'] ?></div>
       </a>
     </div>
