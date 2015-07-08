@@ -27,3 +27,6 @@ right: 0;
 .communityBlogHomeList .hgrp_dateCreate a {
 color: #888;
 }
+.communityBlogHomeList .hgrp_dateCreate a:hover {
+color: #000;
+}
