@@ -37,6 +37,7 @@ class CtrlCommunityBlogDefault extends CtrlCommunityBlog {
     $this->d['contentTpl'] = 'communityBlog/homeList';
     $this->setPageTitle('Последние посты');
     $ddo = new DdoFour($this->getStrName(), 'siteItemsHome');
+    $ddo->groupFrom('dateCreate');
     $ddo->setPagePath($this->d['basePath']);
     $this->d['html'] = $ddo->setItems($this->items()->getItems())->els();
     $this->d['pNums'] = $this->items()->pNums;
