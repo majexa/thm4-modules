@@ -15,12 +15,15 @@ text-decoration: none;
 }
 
 .communityBlogHomeList .ddItems .line {
-margin-top: 30px;
+margin-top: 40px;
 }
 .communityBlogHomeList .hgrp_dateCreate {
 font-size: 10px;
-width: 400px;
+width: 600px;
 position: absolute;
 bottom: 0;
 right: 0;
+}
+.communityBlogHomeList .hgrp_dateCreate a {
+color: #888;
 }
