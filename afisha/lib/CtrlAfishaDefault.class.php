@@ -42,6 +42,7 @@ class CtrlAfishaDefault extends CtrlThemeFourDefault {
 
   function action_default() {
     $ddo = new DdoFour($this->getStrName(), 'siteItems');
+    $ddo->setPagePath($this->d['basePath']);
     $ddo->disallowEmpties = ['price', 'text'];
     $ddo->groupFrom('title');
     $items = $this->items();
