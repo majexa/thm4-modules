@@ -13,9 +13,8 @@ class CtrlCommunityBlogReport extends CtrlCommunityBlog {
       'в неделю',
       'в день',
     ];
-    $names = db()->col  ("SELECT userId AS ARRAY_KEY, name FROM dd_i_profile");
+    $names = db()->col("SELECT userId AS ARRAY_KEY, name FROM dd_i_profile");
     foreach ($userIds as $userId) {
-
       $r[] = [
         'userId' => isset($names[$userId]) ? $names[$userId] : "[$userId]",
         'week'   => isset($postCounts['week'][$userId]) ? $postCounts['week'][$userId] : 0,
