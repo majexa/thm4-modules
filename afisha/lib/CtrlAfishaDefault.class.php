@@ -77,13 +77,15 @@ class CtrlAfishaDefault extends CtrlThemeFourDefault {
 
   function action_item() {
     $this->d['layout'] = 'cols2';
-    $this->d['tpl'] = 'bookmarkContent';
+    $this->d['tpl'] = 'afisha/item';
     $this->d['blocksTpl'] = 'empty';
-    $ddo = new DdoFour($this->getStrName(), 'siteItem');
+    $ddo = new Ddo($this->getStrName(), 'siteItem');
     $item = Misc::checkEmpty($this->items()->getItem($this->req->param(1)));
-    $this->d['title'] = $item['title'];
     $ddo->setItem($item);
     $this->d['html'] = $ddo->els();
+    $this->d['item'] = $item;
+    $this->setPageTitle($item['title']);
+    $this->setPageHeadTitle($item['title'].' — '.Date::str($item['dateCreate_tStamp']));
   }
 
 }

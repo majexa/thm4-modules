@@ -5,12 +5,24 @@ vertical-align: top;
 .str_afisha .hgrp_title {
 width: 430px;
 }
+
+.smIcons {
+}
+
+.ddItem {
+width: 275px;
+}
 .ddItem.str_afisha .f_text {
-font-size: 16px;
 margin-bottom: 15px;
 }
 .ddItem.str_afisha .f_price {
 margin-top: 5px;
+}
+.ddItem.str_afisha .f_image {
+position: absolute;
+top: 8px;
+left: -213px;
+
 }
 .str_afisha .hgrp {
 display: inline-block;
