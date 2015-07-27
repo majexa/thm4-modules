@@ -6,9 +6,6 @@ vertical-align: top;
 width: 430px;
 }
 
-.smIcons {
-}
-
 .ddItem {
 width: 275px;
 }
@@ -22,7 +19,9 @@ margin-top: 5px;
 position: absolute;
 top: 8px;
 left: -213px;
-
+}
+.ddItem.str_afisha .f_image img {
+width: 185px;
 }
 .str_afisha .hgrp {
 display: inline-block;
