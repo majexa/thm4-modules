@@ -1,0 +1,32 @@
+.communityBlogHomeList .avatarCont {
+width: 150px;
+text-align: right;
+float: left;
+margin-left: -240px;
+width: 190px;
+}
+.communityBlogHomeList img.avatar {
+text-align: right;
+display: inline-block;
+margin-top: 10px;
+}
+.communityBlogHomeList .ddItems.str_communityBlog .f_text a {
+text-decoration: none;
+}
+
+.communityBlogHomeList .ddItems .line {
+margin-top: 40px;
+}
+.communityBlogHomeList .hgrp_dateCreate {
+font-size: 10px;
+width: 600px;
+position: absolute;
+bottom: 0;
+right: 0;
+}
+.communityBlogHomeList .hgrp_dateCreate a {
+color: #888;
+}
+.communityBlogHomeList .hgrp_dateCreate a:hover {
+color: #000;
+}

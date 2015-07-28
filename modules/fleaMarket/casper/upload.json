@@ -1,0 +1,11 @@
+[
+  ["~thenUrl", ""],
+  ["~fill" , "form#tukUpload", {
+    "images[]": [
+      "{ngnPath}/more/lib/test/fixture/1.jpg"
+    ]
+  }],
+  ["~submit", "form#tukUpload"],
+  ["~thenUrl", ""],
+]
+

@@ -1,0 +1,16 @@
+.ddItems.str_communityBlog .f_images .thumb {
+margin: 0 10px 10px 0;
+}
+.ddItems.str_communityBlog .f_title .name {
+}
+.ddItems.str_communityBlog .t_datetime {
+float: right;
+text-align: right;
+font-size: 10px;
+color: #555;
+}
+.ddItems.str_communityBlog .f_text {
+font-size: 15px;
+font-family: Georgia;
+font-style: italic;
+}

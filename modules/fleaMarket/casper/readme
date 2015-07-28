@@ -1,0 +1,6 @@
+php C:/www/refactor/ngn-env/projects/tuk/cmd.php preTestUpload
+casperjs ~/ngn-env/ngn/more/casper/test.js \
+--projectDir=~/ngn-env/projects/test \
+--disableAfterCaptureCmd=1 \
+--stepsFile=upload \
+--ngnPath=~/ngn-env/ngn
