@@ -20,16 +20,28 @@ return array (
   array (
     0 => 
     array (
+      'title' => 'Аватар',
+      'name' => 'image',
+      'type' => 'imagePreview',
+    ),
+    1 => 
+    array (
       'title' => 'Имя',
       'name' => 'name',
       'type' => 'typoText',
       'required' => true,
     ),
-    1 => 
+    2 => 
     array (
-      'title' => 'Аватар',
-      'name' => 'image',
-      'type' => 'imagePreview',
+      'title' => 'Описание',
+      'name' => 'info',
+      'type' => 'wisiwigSimple',
+    ),
+    3 => 
+    array (
+      'title' => 'Статус',
+      'name' => 'status',
+      'type' => 'text',
     ),
   ),
 );

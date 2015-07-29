@@ -44,7 +44,7 @@ return array (
     array (
       'title' => 'Стоимость',
       'name' => 'price',
-      'type' => 'price',
+      'type' => 'typoText',
     ),
   ),
 );
