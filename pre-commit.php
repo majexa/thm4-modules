@@ -11,16 +11,16 @@ foreach (glob(__DIR__.'/modules/*') as $dir) {
     foreach ($fields as $prevField) {
       $field = Arr::getValueByKey($structures[$strName], 'name', $prevField['name']);
       if (!$field) {
-        print "Unknown error. Cant commit";
+        print("Unknown error. Cant commit\n");
         exit(1);
       }
       if (count($field) < count($prevField)) {
-        print "Number count of '$strName' structure can't be less then was before";
+        print("Number count of '$strName' structure can't be less then was before\n");
         exit(1);
       }
     }
   }
-  print "stored $name\n";
+  print("thm-four-modules: stored $name\n");
   file_put_contents(__DIR__.'/state/'.$name.'.php', "<?php\n\nreturn ".var_export($structures, true).';');
 }
 
