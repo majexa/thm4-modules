@@ -1,3 +1,0 @@
-<?php
-
-(new CmsmagImport)->start();
