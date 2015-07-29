@@ -15,15 +15,25 @@ return [
   ],
   'profile' => [
     [
+      'title'    => 'Аватар',
+      'name'     => 'image',
+      'type'     => 'imagePreview',
+    ],
+    [
       'title'    => 'Имя',
       'name'     => 'name',
       'type'     => 'typoText',
       'required' => true
     ],
     [
-      'title'    => 'Аватар',
-      'name'     => 'image',
-      'type'     => 'imagePreview',
+      'title'    => 'Описание',
+      'name'     => 'info',
+      'type'     => 'wisiwigSimple',
+    ],
+    [
+      'title'    => 'Статус',
+      'name'     => 'status',
+      'type'     => 'text',
     ],
   ]
 ];

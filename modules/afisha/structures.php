@@ -36,7 +36,7 @@ return [
     [
       'title' => 'Стоимость',
       'name'  => 'price',
-      'type'  => 'price'
+      'type'  => 'typoText'
     ],
   ]
 ];
