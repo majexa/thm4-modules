@@ -39,3 +39,7 @@ margin-left: 20px;
 .ddItems.str_afisha .f_text {
 margin-bottom: 0;
 }
+.ddItems.str_afisha .source {
+font-size: 10px;
+float: right;
+}

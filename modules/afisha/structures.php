@@ -38,5 +38,11 @@ return [
       'name'  => 'price',
       'type'  => 'typoText'
     ],
+    [
+      'title' => 'Источник',
+      'name'  => 'source',
+      'type'  => 'text',
+      'system' => true
+    ],
   ]
 ];
