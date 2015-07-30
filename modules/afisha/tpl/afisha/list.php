@@ -1,5 +1,10 @@
-<div class="pNums"><?= $d['pNums'] ?></div>
+<div class="pNums pNumsTop">
+  <?= $d['pNums'] ?>
+</div>
 <?= $d['html'] ?>
+<div class="pNums pNumsBottom">
+  <?= $d['pNums'] ?>
+</div>
 
 <script>
   <? if ($d['mobile']) { ?>
