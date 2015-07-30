@@ -46,5 +46,12 @@ return array (
       'name' => 'price',
       'type' => 'typoText',
     ),
+    7 => 
+    array (
+      'title' => 'Источник',
+      'name' => 'source',
+      'type' => 'text',
+      'system' => true,
+    ),
   ),
 );
