@@ -1,6 +1,6 @@
 <?php
 
-class CtrlAfishaDefault extends CtrlThemeFourDefault {
+class CtrlAfishaDefault extends CtrlThemeFourDd {
   use DdCrudParamFilterCtrl;
 
   protected function themeFourModule() {
@@ -41,6 +41,9 @@ class CtrlAfishaDefault extends CtrlThemeFourDefault {
   }
 
   function action_default() {
+    parent::action_default();
+    $this->d['blocksTpl'] = 'afisha/blocks';
+    $this->d['contentTpl'] = 'afisha/list';
     $ddo = new DdoFour($this->getStrName(), 'siteItems');
     $ddo->setPagePath($this->d['basePath']);
     $ddo->disallowEmpties = ['price', 'text'];
@@ -53,9 +56,6 @@ class CtrlAfishaDefault extends CtrlThemeFourDefault {
     $this->d['pNums'] = $items->pNums;
     $this->d['html'] = count($_items) ? $ddo->setItems($_items)->els() : '<div class="noItems">событий нет</div>';
     $this->d['tpl'] = 'bookmarkContent';
-    $this->d['contentTpl'] = 'afisha/list';
-    $this->d['blocksTpl'] = 'afisha/blocks';
-    $this->d['layout'] = 'cols2';
     $this->initCalendar();
     if ($this->day) {
       $cnt = ' ('.count($_items).' шт.)';
@@ -78,11 +78,11 @@ class CtrlAfishaDefault extends CtrlThemeFourDefault {
   function action_item() {
     $this->d['layout'] = 'cols2';
     $this->d['tpl'] = 'afisha/item';
-    $this->d['blocksTpl'] = 'empty';
-    $ddo = new Ddo($this->getStrName(), 'siteItem');
     $item = Misc::checkEmpty($this->items()->getItem($this->req->param(1)));
-    $ddo->setItem($item);
-    $this->d['html'] = $ddo->els();
+    $this->d['html'] = (new Ddo($this->getStrName(), 'siteItem'))->setItem($item)->els();
+    list($this->d['html'], $image) = Html::removeTag($this->d['html'], 'div', ['class', 'f_image']);
+    $this->d['blocksTpl'] = 'empty';
+    Tt()->getTpl('blocksTpl',
     $this->d['item'] = $item;
     $this->setPageTitle($item['title']);
     $this->setPageHeadTitle($item['title'].' — '.Date::str($item['dateCreate_tStamp']));

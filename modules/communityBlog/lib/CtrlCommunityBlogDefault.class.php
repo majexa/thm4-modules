@@ -30,15 +30,13 @@ class CtrlCommunityBlogDefault extends CtrlCommunityBlog {
     ]);
   }
 
+
   function action_default() {
-    $this->d['layout'] = 'cols2';
-    $this->d['blocksTpl'] = 'empty';
-    $this->d['tpl'] = 'bookmarkContent';
+    parent::action_default();
     $this->d['contentTpl'] = 'communityBlog/homeList';
     $this->setPageTitle('Последние посты');
     $ddo = new DdoFour($this->getStrName(), 'siteItemsHome');
     $ddo->groupFrom('dateCreate');
-    $ddo->setPagePath($this->d['basePath']);
     $this->d['html'] = $ddo->setItems($this->items()->getItems())->els();
     $this->d['pNums'] = $this->items()->pNums;
   }

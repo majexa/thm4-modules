@@ -1,6 +1,6 @@
 <?php
 
-class CtrlCommunityBlog extends CtrlThemeFourDefault {
+class CtrlCommunityBlog extends CtrlThemeFourDd {
 
   protected function themeFourModule() {
     return 'communityBlog';
