@@ -82,7 +82,6 @@ class CtrlAfishaDefault extends CtrlThemeFourDd {
     $this->d['html'] = (new Ddo($this->getStrName(), 'siteItem'))->setItem($item)->els();
     list($this->d['html'], $image) = Html::removeTag($this->d['html'], 'div', ['class', 'f_image']);
     $this->d['blocksTpl'] = 'empty';
-    Tt()->getTpl('blocksTpl',
     $this->d['item'] = $item;
     $this->setPageTitle($item['title']);
     $this->setPageHeadTitle($item['title'].' — '.Date::str($item['dateCreate_tStamp']));
