@@ -15,13 +15,11 @@ margin-bottom: 15px;
 .ddItem.str_afisha .f_price {
 margin-top: 5px;
 }
-.ddItem.str_afisha .f_image {
-position: absolute;
-top: 8px;
-left: -213px;
-}
-.ddItem.str_afisha .f_image img {
+.col1 .f_image img {
 width: 185px;
+}
+.col1 .f_image {
+padding: 10px 0 0 25px;
 }
 .str_afisha .hgrp {
 display: inline-block;
