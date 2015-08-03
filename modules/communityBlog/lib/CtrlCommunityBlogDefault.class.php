@@ -30,25 +30,14 @@ class CtrlCommunityBlogDefault extends CtrlCommunityBlog {
     ]);
   }
 
-
   function action_default() {
     parent::action_default();
-    $this->d['contentTpl'] = 'communityBlog/homeList';
     $this->setPageTitle('Последние посты');
     $ddo = new DdoFour($this->getStrName(), 'siteItemsHome');
+    $ddo->setPagePath($this->d['basePath']);
     $ddo->groupFrom('dateCreate');
-    $this->d['html'] = $ddo->setItems($this->items()->getItems())->els();
+    $this->d['html'] = '<div class="communityBlogHomeList">'.$ddo->setItems($this->items()->getItems())->els().'</div>';
     $this->d['pNums'] = $this->items()->pNums;
-  }
-
-  function action_item() {
-    $this->d['layout'] = 'cols2';
-    $this->d['blocksTpl'] = 'empty';
-    $this->d['tpl'] = 'bookmarkContent';
-    $item = $this->items()->getItem($this->req->param(1));
-    if ($item['title']) $this->setPageTitle($item['title']);
-    $this->d['contentTpl'] = 'item';
-    $this->d['html'] = $item['text'];
   }
 
   function action_authors() {
@@ -56,7 +45,7 @@ class CtrlCommunityBlogDefault extends CtrlCommunityBlog {
     $this->d['layout'] = 'cols2';
     $this->d['blocksTpl'] = 'empty';
     $this->d['tpl'] = 'bookmarkContent';
-    $this->d['contentTpl'] = 'communityBlog/authors';
+    $this->d['contentTpl'] = 'authors';
     $pagination = new Pagination(['n' => 100]);
     list($this->d['pNums'], $offset) = $pagination->get('dd_i_profile');
     $this->d['items'] = db()->query(<<<SQL
