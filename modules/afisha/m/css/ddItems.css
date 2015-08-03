@@ -5,8 +5,7 @@ vertical-align: top;
 .str_afisha .hgrp_title {
 width: 430px;
 }
-
-.ddItem {
+.ddItem.str_afisha {
 width: 275px;
 }
 .ddItem.str_afisha .f_text {
