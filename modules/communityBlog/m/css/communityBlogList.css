@@ -14,3 +14,6 @@ font-size: 15px;
 font-family: Georgia;
 font-style: italic;
 }
+.ddItems.str_communityBlog .f_text a {
+text-decoration: none;
+}
