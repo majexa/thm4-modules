@@ -36,6 +36,18 @@ class CtrlCommunityBlogDefault extends CtrlCommunityBlog {
     $ddo = new DdoFour($this->getStrName(), 'siteItemsHome');
     $ddo->setPagePath($this->d['basePath']);
     $ddo->groupFrom('dateCreate');
+    $this->d['html'] = $ddo->setItems($this->items()->getItems())->els();
+    $this->d['pNums'] = $this->items()->pNums;
+  }
+
+  function action_user() {
+    parent::action_default();
+    $this->d['profile'] =
+    $this->setPageTitle('Блог '.(new DdItems('profile'))->getItemByField('userId', $this->req->param(1))['name']);
+    $ddo = new DdoFour($this->getStrName(), 'siteItems');
+    $ddo->setPagePath($this->d['basePath']);
+    $ddo->groupFrom('dateCreate');
+    $this->items()->addF('userId', $this->req->param(1));
     $this->d['html'] = '<div class="communityBlogHomeList">'.$ddo->setItems($this->items()->getItems())->els().'</div>';
     $this->d['pNums'] = $this->items()->pNums;
   }
