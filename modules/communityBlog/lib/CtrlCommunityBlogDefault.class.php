@@ -65,4 +65,9 @@ SQL
     $this->d['items'] = DdUseful::sortItemsByUserRecordCounts($this->d['items'], $this->d['postCounts']['day']);
   }
 
+  function action_item() {
+    parent::action_item();
+    $this->setPageHeadTitle(Misc::cut($this->d['item']['text'], 50));
+  }
+
 }

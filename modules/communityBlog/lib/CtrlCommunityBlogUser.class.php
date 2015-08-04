@@ -19,7 +19,6 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDd {
     $this->d['profile'] = Arr::first((new DdItems('profile'))->addF('userId', $this->curUser['id'])->getItems_nocache());
     $this->setPageTitle('Блог');
     $ddo = new DdoFour('communityBlog', 'siteItems');
-    //die2($this->d['basePath']);
     $ddo->setPagePath($this->d['basePath']);
     $this->items()->cond->setOrder('dateCreate DESC');
     $this->items()->addF('userId', $this->curUser['id']);
