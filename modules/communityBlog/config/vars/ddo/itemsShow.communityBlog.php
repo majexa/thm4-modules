@@ -4,6 +4,7 @@ $items = [
   'title' => true,
   'images' => true,
   'text' => true,
+  'tags' => true,
   'dateCreate' => true,
   'author' => true
 ];

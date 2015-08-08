@@ -3,6 +3,9 @@ margin: 0 10px 10px 0;
 }
 .ddItems.str_communityBlog .f_title .name {
 }
+.ddItems.str_communityBlog .f_tags {
+text-align: right;
+}
 .ddItems.str_communityBlog .t_datetime {
 float: right;
 text-align: right;

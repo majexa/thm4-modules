@@ -3,6 +3,10 @@
 class CtrlCommunityBlogDefault extends CtrlCommunityBlog {
   use DdCrudParamFilterCtrl;
 
+  protected function paramFilterN() {
+    return 0;
+  }
+
   protected function themeFourModule() {
     return 'communityBlog';
   }
