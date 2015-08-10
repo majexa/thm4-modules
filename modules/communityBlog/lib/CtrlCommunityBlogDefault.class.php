@@ -13,16 +13,30 @@ class CtrlCommunityBlogDefault extends CtrlCommunityBlog {
 
   protected function init() {
     parent::init();
-    $this->d['submenu'] = $this->extendByBasePath([
+    $this->d['submenu'] = [
       [
-        'title' => 'Блоги',
+        'title' => 'Все',
         'link' => ''
       ],
       [
         'title' => 'Авторы',
         'link' => 'authors'
       ],
-    ]);
+    ];
+    foreach (DdTags::get($this->getStrName(), 'section')->getData() as $v) {
+      $this->d['submenu'][] = [
+        'title' => $v['title'],
+        'link' => 't.section.'.$v['name']
+      ];
+    }
+    if (isset($this->req->params[0])) {
+      foreach ($this->d['submenu'] as &$v) {
+        if ($v['link'] == $this->req->params[0]) $v['sel'] = true;
+      }
+    } else {
+      $this->d['submenu'][0]['sel'] = true;
+    }
+    $this->d['submenu'] = $this->extendByBasePath($this->d['submenu']);
     $this->d['sectionTitle'] = 'Блоги';
   }
 
