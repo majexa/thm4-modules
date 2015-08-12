@@ -15,6 +15,24 @@ return array (
       'name' => 'text',
       'type' => 'wisiwigSimple',
     ),
+    2 => 
+    array (
+      'title' => 'Теги',
+      'name' => 'tags',
+      'type' => 'ddTagsAc',
+    ),
+    3 => 
+    array (
+      'title' => 'Картинки',
+      'name' => 'images',
+      'type' => 'imagesPreview',
+    ),
+    4 => 
+    array (
+      'title' => 'Рубрика',
+      'name' => 'section',
+      'type' => 'ddTagsSelect',
+    ),
   ),
   'profile' => 
   array (
@@ -42,6 +60,13 @@ return array (
       'title' => 'Статус',
       'name' => 'status',
       'type' => 'text',
+    ),
+    4 => 
+    array (
+      'title' => 'Рубрика',
+      'name' => 'section',
+      'type' => 'ddTagsSelect',
+      'defaultDisallow' => true,
     ),
   ),
 );
