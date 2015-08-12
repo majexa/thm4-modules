@@ -12,6 +12,21 @@ return [
       'name'  => 'text',
       'type'  => 'wisiwigSimple'
     ],
+    [
+      'title' => 'Теги',
+      'name'  => 'tags',
+      'type'  => 'ddTagsAc'
+    ],
+    [
+      'title' => 'Картинки',
+      'name'  => 'images',
+      'type'  => 'imagesPreview',
+    ],
+    [
+      'title' => 'Рубрика',
+      'name'  => 'section',
+      'type'  => 'ddTagsSelect',
+    ]
   ],
   'profile' => [
     [
@@ -35,5 +50,11 @@ return [
       'name'     => 'status',
       'type'     => 'text',
     ],
+    [
+      'title'    => 'Рубрика',
+      'name'     => 'section',
+      'type'     => 'ddTagsSelect',
+      'defaultDisallow' => true,
+    ]
   ]
 ];
