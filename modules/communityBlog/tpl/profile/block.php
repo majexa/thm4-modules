@@ -1,5 +1,9 @@
 <div class="colBody blockText" id="profileBlock">
-  <h2><?= $d['profile']['name'] ?></h2>
+  <? if ($d['profile']['link']) { ?>
+    <h2><a href="<?= $d['profile']['link'] ?>"><?= $d['profile']['name'] ?></a></h2>
+  <? } else { ?>
+    <h2><?= $d['profile']['name'] ?></h2>
+  <? } ?>
   <p><small><?= $d['profile']['text'] ?></small></p>
   <p>
     <a href="/blog/<?= $d['profile']['id'] ?>" target="_blank" class="dgray">

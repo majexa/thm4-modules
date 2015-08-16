@@ -88,6 +88,7 @@ SQL
     $this->setPageHeadTitle(Misc::cut($this->d['item']['text'], 50));
     $this->d['blocksTpl'] = 'profile/block';
     $this->d['profile'] = Arr::first((new DdItems('profile'))->addF('userId', $this->d['item']['userId'])->getItems_nocache());
+    $this->d['profile']['link'] = $this->d['basePath'].'/user/'.$this->d['item']['userId'];
   }
 
 }
