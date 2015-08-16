@@ -86,6 +86,8 @@ SQL
   function action_item() {
     parent::action_item();
     $this->setPageHeadTitle(Misc::cut($this->d['item']['text'], 50));
+    $this->d['blocksTpl'] = 'profile/block';
+    $this->d['profile'] = Arr::first((new DdItems('profile'))->addF('userId', $this->d['item']['userId'])->getItems_nocache());
   }
 
 }

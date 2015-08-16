@@ -11,5 +11,11 @@ $items = [
 
 return [
   'siteItemsHome' => $items,
-  'siteItems' => $items
+  'siteItems' => $items,
+  'siteItem' => [
+    'images' => true,
+    'text' => true,
+    'tags' => true,
+    'dateCreate' => true,
+  ]
 ];
