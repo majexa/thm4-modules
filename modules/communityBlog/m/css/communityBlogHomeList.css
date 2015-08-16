@@ -14,17 +14,3 @@ margin-top: 10px;
 .communityBlogHomeList .ddItems .line {
 margin-top: 40px;
 }
-.communityBlogHomeList .hgrp_dateCreate {
-font-size: 10px;
-width: 600px;
-position: absolute;
-bottom: 0;
-right: 0;
-}
-.communityBlogHomeList .hgrp_dateCreate a {
-color: #888;
-}
-.communityBlogHomeList .hgrp_dateCreate a:hover {
-color: #000;
-}
-

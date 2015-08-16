@@ -20,3 +20,18 @@ font-style: italic;
 .ddItems.str_communityBlog .f_text a {
 text-decoration: none;
 }
+
+.ddItems.str_communityBlog .hgrp_dateCreate {
+font-size: 10px;
+width: 600px;
+position: absolute;
+bottom: 0;
+right: 0;
+}
+.ddItems.str_communityBlog .hgrp_dateCreate a {
+color: #888;
+}
+.ddItems.str_communityBlog .hgrp_dateCreate a:hover {
+color: #000;
+}
+

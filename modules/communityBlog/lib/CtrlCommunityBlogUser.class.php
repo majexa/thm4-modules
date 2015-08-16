@@ -20,6 +20,7 @@ class CtrlCommunityBlogDefault extends CtrlThemeFourDd {
     $this->setPageTitle('Блог');
     $ddo = new DdoFour('communityBlog', 'siteItems');
     $ddo->setPagePath($this->d['basePath']);
+    $ddo->groupFrom('dateCreate');
     $this->items()->cond->setOrder('dateCreate DESC');
     $this->items()->addF('userId', $this->curUser['id']);
     $this->d['html'] = $ddo->setItems($this->items()->getItems())->els();
