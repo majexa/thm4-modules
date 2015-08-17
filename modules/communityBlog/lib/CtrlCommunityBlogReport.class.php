@@ -4,7 +4,7 @@ class CtrlCommunityBlogReport extends CtrlCommunityBlog {
 
   function action_default() {
     //if (!Misc::isAdmin()) throw new Error404;
-    $userIds = db()->col("SELECT userId FROM dd_i_communityBlog WHERE userId IS NOT NULL GROUP BY userId");
+    $userIds = db()->selectCol("SELECT userId FROM dd_i_communityBlog WHERE userId IS NOT NULL GROUP BY userId");
     $postCounts = [];
     $postCounts['week'] = DdUseful::userRecordCounts('communityBlog', strtotime('-1 week'));
     $postCounts['day'] = DdUseful::userRecordCounts('communityBlog', strtotime('-1 day'));
@@ -13,7 +13,7 @@ class CtrlCommunityBlogReport extends CtrlCommunityBlog {
       'в неделю',
       'в день',
     ];
-    $names = db()->col("SELECT userId AS ARRAY_KEY, name FROM dd_i_profile");
+    $names = db()->selectCol("SELECT userId AS ARRAY_KEY, name FROM dd_i_profile");
     foreach ($userIds as $userId) {
       $r[] = [
         'userId' => isset($names[$userId]) ? $names[$userId] : "[$userId]",
