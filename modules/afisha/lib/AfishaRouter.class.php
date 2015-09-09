@@ -7,3 +7,4 @@ class AfishaRouter extends ThmFourRouter {
   }
 
 }
+
