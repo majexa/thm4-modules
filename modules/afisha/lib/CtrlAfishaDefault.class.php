@@ -43,7 +43,7 @@ class CtrlAfishaDefault extends CtrlThemeFourDd {
   function action_default() {
     parent::action_default();
     $this->d['blocksTpl'] = 'afisha/blocks';
-    $this->d['contentTpl'] = $this->d['mobile'] ? 'afisha/mobile/list' : 'afisha/list';
+    $this->d['contentTpl'] = 'afisha/list';
     $ddo = new DdoFour($this->getStrName(), 'siteItems');
     $ddo->setPagePath($this->d['basePath']);
     $ddo->disallowEmpties = ['price', 'text'];
