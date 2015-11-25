@@ -78,7 +78,8 @@ class CtrlAfishaDefault extends CtrlThemeFourDd {
   function action_item() {
     $this->d['layout'] = 'cols2';
     $this->d['tpl'] = 'afisha/item';
-    $item = Misc::checkEmpty($this->items()->getItem($this->req->param(1)));
+    $item = $this->items()->getItem($this->req->param(1));
+    if (!$item) throw new Error404;
     $this->d['html'] = (new Ddo($this->getStrName(), 'siteItem'))->setItem($item)->els();
     list($this->d['html'], $image) = Html::removeTag($this->d['html'], 'div', ['class', 'f_image']);
     $this->d['blocksTpl'] = new TtTpl($this->tt, $this->d, ['html' => $image]);;
