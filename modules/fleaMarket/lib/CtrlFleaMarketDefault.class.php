@@ -47,7 +47,7 @@ class CtrlFleaMarketDefault extends CtrlThemeFour {
     $this->d['blocksTpl'] = 'upload';
     $this->d['tpl'] = 'default';
     Sflm::frontend('js')->addPath('i/js/ngn/form/domreadyInit.js');
-    $form = new MultiImageUploadForm([
+    $form = new MultiImageUploadWizardForm([
       'baseUrl' => $this->d['basePath']
     ]);
     //$form->action = ;

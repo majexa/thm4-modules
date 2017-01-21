@@ -5,3 +5,10 @@
 display: inline-block;
 width: 45%;
 }
+
+.apeform .name_eventDate input,
+.apeform .name_eventTime input,
+.apeform .name_place input,
+.apeform .name_price input {
+width: 100%;
+}

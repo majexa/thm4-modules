@@ -1,7 +1,6 @@
 <?php
 
 class CtrlAfishaDefault extends CtrlThemeFourDd {
-  use DdCrudParamFilterCtrl;
 
   protected function themeFourModule() {
     return 'afisha';
@@ -23,7 +22,6 @@ class CtrlAfishaDefault extends CtrlThemeFourDd {
         'link' => 'd.'.date('j').';'.date('n').';'.date('Y').'.dateCreate'
       ]
     ]);
-
     $this->d['sectionTitle'] = 'События';
   }
 
@@ -82,7 +80,7 @@ class CtrlAfishaDefault extends CtrlThemeFourDd {
     if (!$item) throw new Error404;
     $this->d['html'] = (new Ddo($this->getStrName(), 'siteItem'))->setItem($item)->els();
     list($this->d['html'], $image) = Html::removeTag($this->d['html'], 'div', ['class', 'f_image']);
-    $this->d['blocksTpl'] = new TtTpl($this->tt, $this->d, ['html' => $image]);;
+    $this->d['blocksTpl'] = new TtTpl($this->tt, $this->d, ['html' => $image]);
     $this->d['item'] = $item;
     $this->setPageTitle($item['title']);
     $this->setPageHeadTitle($item['title'].' — '.Date::str($item['dateCreate_tStamp']));

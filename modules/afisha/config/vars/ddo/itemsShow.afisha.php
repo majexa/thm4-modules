@@ -7,5 +7,5 @@ return [
     'eventDate' => true,
     'eventTime' => true,
     'price' => true,
-  ]
+  ],
 ];
